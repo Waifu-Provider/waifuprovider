@@ -113,14 +113,15 @@ try:
             ⣿⠃⠃⠄⠄⠄⠄⠄⠄⣀⢀⠄⠄⡀⡀⢀⣤⣴⣤⣤⣀⣀⠄⠄⠄⠄⠄⠄⠁⢹
             '''
             ]
-
+            # Randomizes ascii art
             randomOutput = random.choice(randomSFW)
 
             print('\n' + randomOutput + '\n')
 
             print('Downloading...')
             time.sleep(0.5)
-            req = urllib.request.Request(url_sfw, headers={'User-Agent': 'Mozilla/5.0'})
+            req = urllib.request.Request(url_sfw, headers={'User-Agent': 'Mozilla/5.0'}) # Stops 403 error
+            # Saves the downloaded image to the designated folder
             with open('../images/sfw/animeSFW.jpg', "wb") as f:
                 with urllib.request.urlopen(req) as r:
                     f.write(r.read())
@@ -177,13 +178,14 @@ try:
                 ⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿
                 '''
             ]
-
+            # Randomizes ascii art
             randomOutput = random.choice(randomNSFW)
             
             print('\n' + randomOutput + '\n')
             print('Downloading...')
             time.sleep(0.5)
-            req = urllib.request.Request(url_nsfw, headers={'User-Agent': 'Mozilla/5.0'})
+            req = urllib.request.Request(url_nsfw, headers={'User-Agent': 'Mozilla/5.0'}) # Stops 403 error
+            # Saves the downloaded image to the designated folder
             with open('../images/nsfw/animeNSFW.jpg', "wb") as f:
                 with urllib.request.urlopen(req) as r:
                     f.write(r.read())
@@ -195,3 +197,5 @@ except:
 
 if __name__ == '__main__':
     aniSearch()
+
+# What am I doing with my life?
