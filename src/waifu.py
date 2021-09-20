@@ -1,7 +1,7 @@
 import requests
 import json
 import urllib.request
-import sys
+import sys, os
 import time
 import random
 
@@ -119,10 +119,12 @@ try:
             print('\n' + randomOutput + '\n')
 
             print('Downloading...')
-            time.sleep(0.5)
             req = urllib.request.Request(url_sfw, headers={'User-Agent': 'Mozilla/5.0'}) # Stops 403 error
             # Saves the downloaded image to the designated folder
-            with open('../images/sfw/animeSFW.jpg', "wb") as f:
+            parent_dir = '../images/sfw/'
+            img_path = os.path.join(parent_dir, random_sfw_cat)
+            os.mkdir(img_path)
+            with open(f'../images/sfw/{random_sfw_cat}/animeSFW.jpg', "wb") as f:
                 with urllib.request.urlopen(req) as r:
                     f.write(r.read())
         elif json_data_nsfw and options == 'nsfw':
@@ -183,10 +185,12 @@ try:
             
             print('\n' + randomOutput + '\n')
             print('Downloading...')
-            time.sleep(0.5)
             req = urllib.request.Request(url_nsfw, headers={'User-Agent': 'Mozilla/5.0'}) # Stops 403 error
             # Saves the downloaded image to the designated folder
-            with open('../images/nsfw/animeNSFW.jpg', "wb") as f:
+            parent_dir = '../images/nsfw/'
+            img_path = os.path.join(parent_dir, random_nsfw_cat)
+            os.mkdir(img_path)
+            with open(f'../images/nsfw/{random_nsfw_cat}/animeNSFW.jpg', "wb") as f:
                 with urllib.request.urlopen(req) as r:
                     f.write(r.read())
         else:
