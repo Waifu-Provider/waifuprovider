@@ -25,7 +25,7 @@ print(f'''
 {banner}
 {color_scheme(0,140,255,'[*]')}Waifu Provider | {VERSION} {color_scheme(0,140,255,'[*]')}
 {color_scheme(0,140,255,'[*]')}Creator: Hifumi Sec (https://github.com/Hifumi-Sec)
-{color_scheme(0,140,255,'[*]')}Open-Source: https://github.com/Melancholy-Labs/waifuprovider
+{color_scheme(0,140,255,'[*]')}Open-Source: https://github.com/Waifu-Provider/waifuprovider
 {color_scheme(0,140,255,'[*]')}Support The Dev: https://github.com/sponsors/Hifumi-Sec
 ''')
 
